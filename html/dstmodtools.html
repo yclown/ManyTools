@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饥荒服务器mod提取工具</title>
+    <script src="../content/js/Config.js"></script>
+    <script src="../content/js/jquery.js"></script>
+    <script src="../content/js/vue.min.js"></script>
+    <link rel="stylesheet" href="../content/css/style.css">
+</head>
+<body>
+    <textarea name="" id="origin" style="width: 40vw;height: 30vh;" >return {
+            ["workshop-1699194522"]={ configuration_options={ Skillbadge=true }, enabled=true },
+            ["workshop-1991746508"]={ configuration_options={ Language="CHINESE", ShowBuff=true }, enabled=true } 
+          }
+    </textarea>
+    <button onclick="change()">转化==》</button>
+    <textarea name="" id="res"  style="width: 40vw;height: 30vh"></textarea>	
+
+<script>
+    function change(){
+       var mods= $("#origin").val().match(/workshop-\d+/g)
+       var res= mods.map(function(item){
+            return 'ServerModSetup("'+item.split('-')[1]+'")' ;
+       }).join(" \n")
+       $("#res").val(res)
+    }
+    
+</script>
+</body>
+</html>
