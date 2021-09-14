@@ -2,7 +2,11 @@
     margin: 0;
     
 }
+.content .plist{
+    display: flex;
+}
 .content .citem{
     height: 20vw;
     width: 20vw;
+    
 }

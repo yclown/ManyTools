@@ -15,9 +15,12 @@
 <div class="content" id="pagelist">
     <div v-for="item in pages">
         <h1>{{item.Cag}}</h1>
-        <div class="citem" v-for="p in item.Page"  @click="Go(p)">
-            {{p.name}}
+        <div class="plist">
+             <div class="citem" v-for="p in item.Page"  @click="Go(p)">
+                    {{p.name}}
+             </div>
         </div>
+       
 
     </div>
    
